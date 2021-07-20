@@ -9,5 +9,7 @@ public class MeuPrimeiroCursoDeSpringApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(MeuPrimeiroCursoDeSpringApplication.class, args);
 	}
+	
+	//testando commit
 
 }
