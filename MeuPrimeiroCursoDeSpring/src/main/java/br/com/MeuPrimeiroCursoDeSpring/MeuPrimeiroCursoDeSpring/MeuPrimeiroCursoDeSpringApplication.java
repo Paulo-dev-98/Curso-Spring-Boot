@@ -10,6 +10,5 @@ public class MeuPrimeiroCursoDeSpringApplication {
 		SpringApplication.run(MeuPrimeiroCursoDeSpringApplication.class, args);
 	}
 	
-	//testando commit
 
 }

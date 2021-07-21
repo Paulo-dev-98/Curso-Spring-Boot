@@ -11,15 +11,19 @@
 	<groupId>br.com.MeuPrimeiroCursoDeSpring</groupId>
 	<artifactId>MeuPrimeiroCursoDeSpring</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
+	<packaging>jar</packaging>
 	<name>MeuPrimeiroCursoDeSpring</name>
 	<description>Curso de Spring Boot</description>
 	<properties>
+	    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+	    <project.reporting.outputEnconding>UTF-8</project.reporting.outputEnconding>
 		<java.version>11</java.version>
 	</properties>
 	<dependencies>
+	
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter</artifactId>
+			<artifactId>spring-boot-starter-data-rest</artifactId>
 		</dependency>
 
 		<dependency>
@@ -27,6 +31,12 @@
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
+		
+		<dependency>
+		  <groupId>junit</groupId>
+		  <artifactId>junit</artifactId>
+		</dependency>
+		
 	</dependencies>
 
 	<build>
