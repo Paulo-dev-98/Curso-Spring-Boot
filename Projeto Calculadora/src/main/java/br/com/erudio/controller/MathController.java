@@ -16,59 +16,59 @@ public class MathController {
 	
 	@RequestMapping(value="/sum/{numberOne}/{numberTwo}", method=RequestMethod.GET)
 	public Double sum(@PathVariable("numberOne") String numberOne, @PathVariable("numberTwo") String numberTwo) throws Exception {
+		validadorNumerico(numberOne, numberTwo);
+		return math.sum(NumberConverter.covertToDouble(numberOne), NumberConverter.covertToDouble(numberTwo));		
+	}
+
+
+	private void validadorNumerico(String numberOne, String numberTwo) {
 		if (!NumberConverter.isNumeric(numberOne) || !NumberConverter.isNumeric(numberTwo)) {
 			throw new UnsuportedMathOperationException("favor digitar um valor numerico!");
 		}
-		return math.sum(NumberConverter.covertToDouble(numberOne), NumberConverter.covertToDouble(numberTwo));		
 	}	
 	
 	
 	@RequestMapping(value="/subtracao/{numberOne}/{numberTwo}", method=RequestMethod.GET)
 	public Double subtraction(@PathVariable("numberOne") String numberOne, @PathVariable("numberTwo") String numberTwo) throws Exception {
-		if (!NumberConverter.isNumeric(numberOne) || !NumberConverter.isNumeric(numberTwo)) {
-			throw new UnsuportedMathOperationException("favor digitar um valor numerico!");
-		}
+		validadorNumerico(numberOne, numberTwo);
 		return math.subtraction(NumberConverter.covertToDouble(numberOne), NumberConverter.covertToDouble(numberTwo));	
 	}	
 	
 	@RequestMapping(value="/multiplicacao/{numberOne}/{numberTwo}", method=RequestMethod.GET)
 	public Double multiplication(@PathVariable("numberOne") String numberOne, @PathVariable("numberTwo") String numberTwo) throws Exception {
-		if (!NumberConverter.isNumeric(numberOne) || !NumberConverter.isNumeric(numberTwo)) {
-			throw new UnsuportedMathOperationException("favor digitar um valor numerico!");
-		}
+		validadorNumerico(numberOne, numberTwo);
 		return math.multiplication(NumberConverter.covertToDouble(numberOne), NumberConverter.covertToDouble(numberTwo));	
 	}	
 	
 	@RequestMapping(value="/divisao/{numberOne}/{numberTwo}", method=RequestMethod.GET)
 	public Double division(@PathVariable("numberOne") String numberOne, @PathVariable("numberTwo") String numberTwo) throws Exception {
-		if (!NumberConverter.isNumeric(numberOne) || !NumberConverter.isNumeric(numberTwo)) {
-			throw new UnsuportedMathOperationException("favor digitar um valor numerico!");
-		}
+		validadorNumerico(numberOne, numberTwo);
 		return math.division(NumberConverter.covertToDouble(numberOne), NumberConverter.covertToDouble(numberTwo));	
 	}
 	
 	@RequestMapping(value="/resto/{numberOne}/{numberTwo}", method=RequestMethod.GET)
 	public Double resto(@PathVariable("numberOne") String numberOne, @PathVariable("numberTwo") String numberTwo) throws Exception {
-		if (!NumberConverter.isNumeric(numberOne) || !NumberConverter.isNumeric(numberTwo)) {
-			throw new UnsuportedMathOperationException("favor digitar um valor numerico!");
-		}
+		validadorNumerico(numberOne, numberTwo);
 		return math.resto(NumberConverter.covertToDouble(numberOne), NumberConverter.covertToDouble(numberTwo));	
 	}
 
 	
 	@RequestMapping(value="/media/{numberOne}/{numberTwo}", method=RequestMethod.GET)
 	public Double mean(@PathVariable("numberOne") String numberOne, @PathVariable("numberTwo") String numberTwo) throws Exception {
-		if (!NumberConverter.isNumeric(numberOne) || !NumberConverter.isNumeric(numberTwo)) {
-			throw new UnsuportedMathOperationException("favor digitar um valor numerico!");
-		}
+		validadorNumerico(numberOne, numberTwo);
 		return math.mean(NumberConverter.covertToDouble(numberOne), NumberConverter.covertToDouble(numberTwo));		
 	}	
 	
 	@RequestMapping(value="/raizQuadrada/{number}", method=RequestMethod.GET)
 	public Double squareRoot(@PathVariable("number") String number) throws Exception {
+		validadorNumericoRaiz(number);
+		return math.squareRoot(NumberConverter.covertToDouble(number));		
+	}
+
+
+	private void validadorNumericoRaiz(String number) {
 		if (!NumberConverter.isNumeric(number)) {
 			throw new UnsuportedMathOperationException("favor digitar um valor numerico!");
 		}
-		return math.squareRoot(NumberConverter.covertToDouble(number));		
 	}	
 }
