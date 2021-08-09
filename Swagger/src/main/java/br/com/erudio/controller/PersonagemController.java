@@ -20,8 +20,8 @@ import br.com.erudio.data.vo.v1.PersonagemVO;
 import br.com.erudio.services.PersonagemServices;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
-
-@Api(value = "EndPoint de Personagens" , description = "cadastra um catagologo de personagens.", tags = {"personagemController"})
+//(value = "EndPoint de Personagens" , description = "cadastra um catagologo de personagens.", tags = {"personagemController"})
+@Api(tags = "EndpointPersonagem")
 @RestController
 @RequestMapping("/api/personagem/v1")
 public class PersonagemController {
@@ -37,6 +37,7 @@ public class PersonagemController {
 		return personagem;
 	}
 	
+	@ApiOperation(value = "busca personagem expecifico")
 	@GetMapping(value = "/{id}", produces = { "application/json", "application/xml", "application/x-yaml" })
 	public PersonagemVO findById(@PathVariable("id") Long id) {
 		PersonagemVO personagemVo = service.findById(id);
