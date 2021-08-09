@@ -1,0 +1,2 @@
+INSERT INTO `personagem` (`id`, `nome`, `idade`, `sexo`, `origem`, `universo`, `habitacao`, `personalidade`, `poder`, `frase_de_efeito_numero_1`, `frase_de_efeito_numero_2` ) VALUES
+	(1, 'Seto kaiba', '18', 'Male', 'O personagem seto kaiba residia em um orfanato com seu irmão mokuba ate que conseguiu convencer gosabura kaiba a adota-los vencendo-o em um jogo de xadrez', 'animes', 'kaiba corp', 'arrogante', 'deck dos dragões', 'o coração dos homens podem superar os deuses, eu apenas me entreguei a ele', 'para me matar, você tera que matar as cartas.');
