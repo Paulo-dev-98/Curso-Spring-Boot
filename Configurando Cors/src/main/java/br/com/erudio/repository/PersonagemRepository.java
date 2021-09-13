@@ -8,4 +8,5 @@ import br.com.erudio.data.model.Personagem;
 @Repository
 public interface PersonagemRepository extends JpaRepository<Personagem, Long> {
 
+
 }

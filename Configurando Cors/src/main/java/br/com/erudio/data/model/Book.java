@@ -114,11 +114,5 @@ public class Book implements Serializable {
 			return false;
 		return true;
 	}
-	
-	
-	
-	
-	
-	
 
 }

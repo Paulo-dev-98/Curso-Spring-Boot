@@ -45,6 +45,7 @@ public class PersonagemController {
 		return personagemVo;
 	}
 	
+	@ApiOperation(value = "cadastrar personagem")
 	@PostMapping(produces = { "application/json", "application/xml", "application/x-yaml" }, 
 		         consumes = { "application/json", "application/xml", "application/x-yaml" })
     public PersonagemVO create(@RequestBody PersonagemVO personagem) {
@@ -53,6 +54,7 @@ public class PersonagemController {
 	return personagemVo;
     }
 	
+	@ApiOperation(value = "atualizar personagem")
 	@PutMapping(produces = {"application/json" , "application/xml", "application/x-yaml"}, 
                 consumes = {"application/json" , "application/xml", "application/x-yaml"})
     public PersonagemVO update(@RequestBody PersonagemVO personagem) {
@@ -61,6 +63,7 @@ public class PersonagemController {
     return personagemVo;
     }
 	
+	@ApiOperation("deletar personagem")
 	@DeleteMapping("/{id}")
 	public ResponseEntity<?> delete(@PathVariable("id") Long id) {
 		service.delete(id);
